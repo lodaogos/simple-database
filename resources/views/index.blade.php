@@ -20,6 +20,9 @@
                 <a href=" {{ route('data') }} " class="nav-link text-white">Show</a>
             </li>
             <li class="navbar-item">
+                <a href=" {{ route('jobs') }} " class="nav-link text-white">Show Jobs</a>
+            </li>
+            <li class="navbar-item">
                 <a href=" {{ route('form') }} " class="nav-link text-white">Create</a>
             </li>
         </ul>

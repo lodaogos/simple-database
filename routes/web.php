@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\JobsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +15,13 @@ use App\Http\Controllers\DataController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/data', [DataController::class, 'index'])->name('data');
+Route::get('/', [DataController::class, 'index'])->name('data');
+
+Route::get('/jobs', [JobsController::class, 'index'])->name('jobs');
 
 Route::get('/form', function() {
     return view('form');
