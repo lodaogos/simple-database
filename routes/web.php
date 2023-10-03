@@ -18,4 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/data', [DataController::class, 'index']);
+Route::get('/data', [DataController::class, 'index'])->name('data');
+
+Route::get('/form', function() {
+    return view('form');
+})->name('form');
+
+Route::post('/create', [DataController::class, 'create']);

@@ -15,4 +15,16 @@ class DataController extends Controller
          // Pass the data to the 'data' view
          return view('data', compact('users'));
     }
+
+    public function create(Request $request)
+    {
+        User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('pass')),
+            'color' => $request->input('color'),
+            'age' => $request->input('age')
+        ]);
+        return redirect('/form');
+    }
 }
