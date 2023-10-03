@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('position');
             $table->string('company');
-            $table->money_format('salary');
+            $table->integer('salary');
         });
     }
 
