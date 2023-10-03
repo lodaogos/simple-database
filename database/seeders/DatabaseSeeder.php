@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use App\Models\Jobs;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(4)->create();
+        User::factory(5)->create();
+        Jobs::factory(5)->create();
     }
 }
