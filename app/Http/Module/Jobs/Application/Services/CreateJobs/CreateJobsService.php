@@ -24,3 +24,4 @@ class CreateJobsService
         $this->jobs_repository->save($jobs);
     }
 }
+
