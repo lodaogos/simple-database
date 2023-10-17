@@ -13,6 +13,11 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // $schedule->command('inspire')->hourly();
+        foreach (scandir($path = app_path('Modules')) as $dir) {
+            if (file_exists($folder_path = "{$path}/{$dir}/Presentation/Commands")) {
+                $this->load($folder_path);
+            }
+        }
     }
 
     /**

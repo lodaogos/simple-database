@@ -19,6 +19,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Register view namespaces
+        foreach (scandir($path = app_path('Modules')) as $moduleDir) {
+            View::addNamespace($moduleDir, "{$path}/{$moduleDir}/Presentation/views");
+        }
     }
+
+    
 }
