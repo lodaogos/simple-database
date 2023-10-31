@@ -12,7 +12,15 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        // $schedule->command('inspire')->hourly();\
+        // Clear configuration cache every day at a specific time
+        $schedule->command('config:clear')->dailyAt('03:00');
+
+        // Clear route cache every day at a specific time
+        $schedule->command('route:clear')->dailyAt('03:30');
+
+        // Clear view cache every day at a specific time
+        $schedule->command('view:clear')->dailyAt('04:00');
     }
 
     /**

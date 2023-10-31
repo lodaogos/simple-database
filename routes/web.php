@@ -34,7 +34,6 @@ Route::get('/form', function () {
 Route::post('/create', 'App\Http\Controllers\DataController@create');
 
 
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
